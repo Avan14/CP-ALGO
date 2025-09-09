@@ -21,7 +21,7 @@ void segemnted_seive(int l, int r)
         }
     }
     int size = r - l + 1;
-    int dummy[100001];
+    bool dummy[100001];
     for (int i = 0; i < size; i++)
     {
         dummy[i] = 1;
