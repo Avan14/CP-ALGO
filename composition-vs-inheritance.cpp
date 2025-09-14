@@ -31,6 +31,20 @@ public:
         cout << "Class C display function called" << endl;
     }
 };
+
+
+class K  {
+    private :
+    A *a;
+    public :
+    K(A &_a){
+        this->a = &_a;
+    }
+    void show(){
+        a->show();
+    }
+
+};
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -40,8 +54,15 @@ int main() {
     b.show();    // inherited from A
     b.display(); // defined in B
     C c;
-    c.show();    // uses A's functionality
+    c.show();    // uses A' s functionality
     c.display(); // defined in C
+    
 
+    A a;
+    
+    K * k = new K(a);
+
+    k->show();
+    
     return 0;
 }
