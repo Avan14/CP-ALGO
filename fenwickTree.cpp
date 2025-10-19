@@ -28,7 +28,11 @@ public:
             idx += idx & (-idx);
         }
     }
-
+    void updateRange(int left, int right, int val)
+    {
+        update(left, val);
+        update(right + 1, -val);
+    }
     int sum(int idx)
     {   
         idx++; // 1-based indexing
@@ -57,6 +61,10 @@ int main()
     FenwickTree fenwTree(nums);
     cout << "Sum of first 3 elements: " << fenwTree.sum(2) << "\n"; // Output: 6
     cout << "Range Sum (1 to 3): " << fenwTree.rangeSum(1, 3) << "\n"; // Output: 9
+    fenwTree.update(2, 5); // Increment index 2 by 5
+    cout << "Sum after update at index 2: " << fenwTree.sum(2) << "\n"; // Output: 11
+    fenwTree.updateRange(1, 3, 2); // Increment range [1, 3] by 2
+    cout << "Range Sum (1 to 3) after range update: " << fenwTree.rangeSum(1, 3) << "\n"; // Output: 15
         
 
     return 0;
