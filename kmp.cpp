@@ -31,6 +31,8 @@ int main() {
             }
         }
     }
+
+    while( i < m)
      i= 0 ;
      int j = 0;
      while( i < text.size()){

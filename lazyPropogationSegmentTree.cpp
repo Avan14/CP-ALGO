@@ -78,11 +78,10 @@ int lazyQuery( int idx ,  int start , int end , int Qstart , int Qend ){
     // resolve any pending lazy upodates;
     if(lazy[idx]!=0){
         segTree[idx] += (end - start + 1 )*lazy[idx];
-        if( start += end){
+        if( start != end){
             lazy[2*idx + 1] += lazy[idx];
             lazy[2*idx + 2] += lazy[idx];
         }
-
         lazy[idx] = 0 ;
     }
 

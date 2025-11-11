@@ -43,18 +43,7 @@ ll gcd(ll temp_a, ll temp_b) { return temp_b == 0 ? temp_a : gcd(temp_b, temp_a 
 ll lcm(ll temp_a, ll temp_b) { return (temp_a / gcd(temp_a, temp_b)) * temp_b; }
 // -------------------------------------------------------------------------------------------------
 
-ll inv(ll b, ll m = 1e9 + 7, ll e = 1e9 + 5)
-{
-    ll r = 1;
-    while (e > 0)
-    {
-        if (e % 2 == 1)
-            r = (r * b) % m;
-        b = (b * b) % m;
-        e /= 2;
-    }
-    return r;
-}
+
 
 ll modExp(ll base, ll exp, ll mod)
 {

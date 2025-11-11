@@ -44,16 +44,15 @@ vector<int > toposortKahns(int n , vector<vector<int>>& adj){
     }
 
     while(!q.empty()){
-        int u = q.front();
-        q.pop();
-        result.push_back(u);
-
-        for( int v : adj[u]){
-            indegree[v]--;
-            if( indegree[v] == 0){
-                q.push(v);
+            int u = q.front();
+            q.pop();    
+            result.push_back(u);
+            for( int v : adj[u]){
+                indegree[v]--;
+                if( indegree[v] == 0){
+                    q.push(v);
+                }
             }
-        }
     }
     return result;
 }

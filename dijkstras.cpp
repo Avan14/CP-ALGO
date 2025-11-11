@@ -7,16 +7,19 @@ using namespace std;
 vector<int> dijkstra(int src, vector<pair<int, int>> adj[], int n)
 {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-    vector<int> dist(n,1e9);
-    dist[0] =0 ;
-    pq.push({0,src});
-    while(!pq.empty()){
-        auto  [v ,d] = pq.top();
+    vector<int> dist(n, 1e9);
+    dist[0] = 0;
+    pq.push({0, src});
+    while (!pq.empty())
+    {
+        auto [v, d] = pq.top();
         pq.pop();
-        for( auto [u , w] : adj[v]){
-            if(dist[v] + w < dist[u]){
-                dist[u] = dist[v] +w;
-                pq.push({u,dist[u]});
+        for (auto [u, w] : adj[v])
+        {
+            if (dist[v] + w < dist[u])
+            {
+                dist[u] = dist[v] + w;
+                pq.push({u, dist[u]});
             }
         }
     }
