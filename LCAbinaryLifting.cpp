@@ -37,7 +37,7 @@ void dfs(int node, int parent , int dep=0) {
 
     for (int nei : adj[node])
         if (nei != parent)
-            dfs(nei, node);
+            dfs(nei, node , 1 + dep);
 }
 
 int queryKthParent(int node, int k) {

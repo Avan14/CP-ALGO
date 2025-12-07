@@ -8,6 +8,11 @@
         "xutility": "cpp",
         "iostream": "cpp",
         "utility": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "stack": "cpp",
+        "algorithm": "cpp",
+        "limits": "cpp",
+        "functional": "cpp",
+        "list": "cpp"
     }
 }
